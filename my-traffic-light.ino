@@ -6,15 +6,9 @@
 int red     = 13;
 int yellow  = 12;
 int green   = 11;
-int button  =  0;
-int buttonValue = 0;
-
-
 
 /* Setup Function */
 void setup() {
-  pinMode(button, INPUT);
-  
   // sets pins to OUTPUT mode (so we can turn on LEDS)
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
@@ -22,14 +16,8 @@ void setup() {
 }
 /* Main Loop */
 void loop() {
-  digitalWrite(red, HIGH);
-  buttonValue = digitalRead(button);
-
-  if (buttonValue == HIGH) {
-    delay(1000);
-    digitalWrite(red, LOW);
-    changeLights();
-  }
+  // this loop runs repeatedly
+  changeLights();
 }
 /* Utility Functions */
  void changeLights() {
